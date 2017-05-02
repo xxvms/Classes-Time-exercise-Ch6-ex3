@@ -38,13 +38,9 @@ public:
 
 void Time::TimeAdd(Time time1, Time time2)
 	{ 
-		
 		hours = time1.hours + time2.hours;
 		minutes = time1.minutes + time2.minutes;
 		seconds = time1.seconds + time2.seconds;
-
-		//std::cout << temp.hours << ":" << temp.minutes << ":" << temp.seconds << std::endl;
-
 	}
 
 
@@ -54,23 +50,18 @@ int main()
 
 	Time Time2(13, 46, 12);
 
-	std::cout << "Time 2: ";
-	Time2.Display();
-
 	Time1.AddTimeM();
+	Time3.TimeAdd(Time1, Time2);
 	
 	std::cout << "Time 1: ";
 	Time1.Display();
-	std::cout << std::endl;
-
 	std::cout << "Time 2: ";
 	Time2.Display();
-
 	std::cout << "Time 3: " ;
-	Time3.TimeAdd(Time1, Time2);
 	Time3.Display();
 
-
+	
+	std::cout << std::endl;
 
 	
 	system("pause");
