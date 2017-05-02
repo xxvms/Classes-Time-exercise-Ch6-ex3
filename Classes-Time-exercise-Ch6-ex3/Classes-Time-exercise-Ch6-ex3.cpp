@@ -12,21 +12,68 @@ private:
 public:
 	Time(): hours(0), minutes(0), seconds(0)
 	{}
+
 	Time(int hours_, int minutes_, int seconds_): hours(hours_), minutes(minutes_), seconds(seconds_)
 	{}
-	Time TimeAdd(Time time1, Time time2)
+
+	void AddTimeM()
 	{
-		Time time3;
-		time3.hours = time1.hours + time2.hours;
-		time3.minutes = time1.minutes + time2.minutes;
-		time3.seconds = time1.seconds + time2.seconds;
-		return time3;
+		std::cout << "Plase provide time" << std::endl;
+		std::cout << "Hours in format HH: ";
+		std::cin >> hours;
+		std::cout << "Minutes in format MM: ";
+		std::cin >> minutes;
+		std::cout << "Seconds in format SS: ";
+		std::cin >> seconds;
 	}
+
+	void Display()
+	{
+		std::cout << "Time is liquid...." << std::endl;
+		std::cout << hours << ":" << minutes << ":" << seconds << std::endl;
+	}
+
+	void TimeAdd(Time time1, Time time2);
 };
+
+void Time::TimeAdd(Time time1, Time time2)
+	{ 
+		
+		hours = time1.hours + time2.hours;
+		minutes = time1.minutes + time2.minutes;
+		seconds = time1.seconds + time2.seconds;
+
+		//std::cout << temp.hours << ":" << temp.minutes << ":" << temp.seconds << std::endl;
+
+	}
 
 
 int main()
 {
+	Time Time1, Time3;
+
+	Time Time2(13, 46, 12);
+
+	std::cout << "Time 2: ";
+	Time2.Display();
+
+	Time1.AddTimeM();
+	
+	std::cout << "Time 1: ";
+	Time1.Display();
+	std::cout << std::endl;
+
+	std::cout << "Time 2: ";
+	Time2.Display();
+
+	std::cout << "Time 3: " ;
+	Time3.TimeAdd(Time1, Time2);
+	Time3.Display();
+
+
+
+	
+	system("pause");
     return 0;
 }
 
